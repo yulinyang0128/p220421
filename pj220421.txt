@@ -1,0 +1,90 @@
+string? b,c,d,x,y,z,w;
+int j=0,a=0,v=0;
+while(a==0){
+    Console.WriteLine("begin data entering system");
+    Console.WriteLine("enter Name:");
+    x = Console.ReadLine();
+    Console.WriteLine("enter sex(1 for male, 2 for female or 3 for uncertain):");
+    y = Console.ReadLine();
+    Console.WriteLine("enter birth(yy/mm/dd):");
+    z = Console.ReadLine();
+    Console.WriteLine("enter student number:");
+    w = Console.ReadLine();
+    Console.WriteLine("-----------------------");
+    Console.WriteLine("Name:"+x);
+    Console.WriteLine("sex:"+y);
+    Console.WriteLine("birth(yy/mm/dd):"+z);
+    Console.WriteLine("student number:"+w);
+    j=0;
+    v=0;
+    while(j==0){
+        Console.WriteLine("enter 1 to confirm, 2 to fill out data again or 3 to change data");
+        b = Console.ReadLine();
+        switch (b){
+            case "3":
+                while(v==0){
+                    Console.WriteLine("enter 1-4 to edit data,exit to exit editing menu");
+                    Console.WriteLine("1-Name:"+x);
+                    Console.WriteLine("2-sex:"+y);
+                    Console.WriteLine("3-birth(yy/mm/dd):"+z);
+                    Console.WriteLine("4-student number:"+w);
+                    c=Console.ReadLine();
+                    switch (c){
+                        case "1":
+                            Console.WriteLine("enter name again");
+                            x=Console.ReadLine();
+                            break;
+                        case "2":
+                            Console.WriteLine("enter sex(1 for male, 2 for female or 3 for uncertain) again");
+                            y=Console.ReadLine();
+                            break;
+                        case "3":
+                            Console.WriteLine("enter birth(yy/mm/dd)");
+                            z=Console.ReadLine();
+                            break;
+                        case "4":
+                            Console.WriteLine("enter student number:");
+                            w=Console.ReadLine();
+                            break;
+                        case "exit":
+                            Console.WriteLine("exit data editng");
+                            v=1;
+                            j=0;
+                            break;
+                        default:
+                            Console.WriteLine("error:"+ c);
+                            break;
+                        }
+                    }
+                    a=1;
+                    break;
+            case "2":
+                Console.WriteLine("start entering data again.....");
+                j=1;
+                a=0;
+                break;
+            case "1":
+            Console.WriteLine("current data:");
+            Console.WriteLine("Name:"+x);
+            Console.WriteLine("sex:"+y);
+            Console.WriteLine("birth(yy/mm/dd):"+z);
+            Console.WriteLine("student number:"+w);
+                Console.WriteLine("enter yes to continue enter data or no to exit");           
+                d=Console.ReadLine();
+                if(d == "yes"){
+                    j=1;
+                }
+                else if(d == "no"){
+                    j=1;
+                    a=1;
+                }
+                else{
+                    j=1;
+                }
+                break;
+            default:
+                Console.WriteLine("error: "+ b);
+                break;
+        }
+    }
+}
